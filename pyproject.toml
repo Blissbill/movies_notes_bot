@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "movies-notes-bot"
+version = "0.1.0"
+description = ""
+authors = ["Blissbill ne.rom4nov@gmail.com"]
+readme = "README.md"
+packages = [{include = "movies_notes_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-telegram-bot = "^21.1.1"
+pydantic-settings = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
