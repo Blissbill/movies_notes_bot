@@ -7,10 +7,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     base_dir: Path = Path(__file__).parents[1]
-
     bot_token: str = SettingsConfigDict()
+    database_url: str = SettingsConfigDict()
+
     logging: dict = {
         'version': 1,
+        'disable_existing_loggers': True,
         'formatters': {
             'console': {
                 'format': '%(name)s\t[%(funcName)s:%(lineno)s]\t%(asctime)s\t[%(levelname)s]\t%(message)s',
@@ -29,12 +31,16 @@ class Settings(BaseSettings):
             },
         },
         'loggers': {
+            'telegram': {
+                'level': 'DEBUG'
+            },
             '': {
                 'handlers': ['console'],
                 'level': 'DEBUG'
             },
         }
     }
+
     messages_file: Path = os.path.join(base_dir, "messages.json")
 
 

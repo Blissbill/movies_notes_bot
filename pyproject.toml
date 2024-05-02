@@ -10,6 +10,9 @@ packages = [{include = "movies_notes_bot"}]
 python = "^3.11"
 python-telegram-bot = "^21.1.1"
 pydantic-settings = "^2.2.1"
+alembic = "^1.13.1"
+sqlalchemy = "^2.0.29"
+psycopg2 = "^2.9.9"
 
 
 [build-system]
